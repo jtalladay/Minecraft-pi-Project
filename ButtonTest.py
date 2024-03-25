@@ -29,6 +29,19 @@ def tnt_blocks():
         mc.setBlocks(x+1, y+1, z+1, x+11, y+11, z+11, tnt, 1)
 
 #def create_lava():
+
+# can turn this function on if the light value is higher 
+def drop_flowers():
+        grass = 2
+        flower = 38
+
+        while True:
+            x, y, z = mc.player.getPos()  # player position (x, y, z)
+            block_beneath = mc.getBlock(x, y-1, z)  # block ID
+
+            if block_beneath == grass:
+                mc.setBlock(x, y, z, flower)
+            sleep(0.1)
     
 def giant_stone_cube():
     x, y, z = mc.player.getPos()
