@@ -12,7 +12,7 @@ from time import sleep
 button_1 = Button(24)
 button_2 = Button(2)
 
-# Creates connection to running Mminecraft game
+# Creates connection to running Minecraft game
 mc = Minecraft.create()
 
 # Saves starting poistion in world as respawn point
@@ -23,7 +23,11 @@ def respawn_teleport():
         print("teleporting back to respawn point")
         mc.postToChat("Respawn Button pressed")                                         
         mc.player.setPos(home_x,home_y,home_z)
-        
+
+def tnt_blocks():
+        tnt = 46
+        mc.setBlocks(x+1, y+1, z+1, x+11, y+11, z+11, tnt, 1)
+
 #def create_lava():
     
 def giant_stone_cube():
